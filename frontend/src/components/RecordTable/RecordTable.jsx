@@ -1,13 +1,14 @@
 import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable, Column, Row, CellProps } from "react-table";
-import EditableCell from "./EditableCell";
 import {
   asyncDeleteRecords,
   asyncUpdateRecords,
 } from "../../slices/FinancialRecordSlice";
+import EditableCell from "../EditableCell/EditableCell";
+import styles from "./RecordTable.module.css";
 
-function FinancialRecordList() {
+function RecordTable() {
   const dispatch = useDispatch();
   const records = useSelector((state) => state.records.records);
 
@@ -84,7 +85,7 @@ function FinancialRecordList() {
         Header: "Delete",
         id: "delete",
         Cell: ({ row }) => (
-          <button className="button" onClick={() => deleteRow(row.index)}>
+          <button className={styles.deleteButton} onClick={() => deleteRow(row.index)}>
             Delete
           </button>
         ),
@@ -96,8 +97,8 @@ function FinancialRecordList() {
     useTable({ columns, data: records });
 
   return (
-    <div className="table-container">
-      <table {...getTableProps()} className="table">
+    <div className={styles.tableContainer}>
+      <table {...getTableProps()} className={styles.table}>
         <thead>
           {headerGroups.map((hg) => {
             const { key, restHeaderGroupProps } = hg.getHeaderGroupProps();
@@ -106,7 +107,11 @@ function FinancialRecordList() {
                 {hg.headers.map((header) => {
                   const { key, restHeaderProps } = header.getHeaderProps();
                   return (
-                    <th key={key} {...restHeaderProps}>
+                    <th
+                      key={key}
+                      {...restHeaderProps}
+                      className={styles.tableHeaderRow}
+                    >
                       {header.render("Header")}
                     </th>
                   );
@@ -115,7 +120,7 @@ function FinancialRecordList() {
             );
           })}
         </thead>
-        <tbody {...getTableBodyProps()}>
+        <tbody {...getTableBodyProps()} className={styles.tableBody}>
           {rows.map((row) => {
             prepareRow(row);
             const { key, restRowProps } = row.getRowProps();
@@ -124,7 +129,11 @@ function FinancialRecordList() {
                 {row.cells.map((cell) => {
                   const { key, restCellProps } = cell.getCellProps();
                   return (
-                    <td key={key} {...restCellProps}>
+                    <td
+                      key={key}
+                      {...restCellProps}
+                      className={styles.tableDataRow}
+                    >
                       {cell.render("Cell")}
                     </td>
                   );
@@ -138,4 +147,4 @@ function FinancialRecordList() {
   );
 }
 
-export default FinancialRecordList;
+export default RecordTable;

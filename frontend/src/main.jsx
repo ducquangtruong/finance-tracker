@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ClerkProvider } from '@clerk/clerk-react';
+import { ClerkProvider } from "@clerk/clerk-react";
 import { Provider } from "react-redux";
 import App from "./App.jsx";
 import store from "./slices/store.js";
@@ -9,7 +9,7 @@ import "./index.css";
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
-  throw new Error("Publishable key is missing.")
+  throw new Error("Publishable key is missing.");
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(

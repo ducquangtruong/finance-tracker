@@ -6,14 +6,15 @@ import {
   SignUpButton,
 } from "@clerk/clerk-react";
 import { Navigate } from "react-router-dom";
+import styles from "./Auth.module.css"
 
 function Auth() {
   return (
-    <div className="sign-in-container">
+    <div className={styles.signInContainer}>
       <SignedOut>
-        <h1> Welcome to Your Own Personal Finance Tracker!</h1>
-        <SignUpButton mode="modal" />
-        <SignInButton mode="modal" />
+        <h1 className={styles.header}> Welcome to your own personal Finance Tracker!</h1>
+        <SignUpButton mode="modal" className={styles.button}/>
+        <SignInButton mode="modal" className={styles.button}/>
       </SignedOut>
       <SignedIn>
         <Navigate to="/" />

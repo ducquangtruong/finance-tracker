@@ -13,10 +13,13 @@ export default function EditableCell({
   const onBlur = () => {
     setIsEditing(false);
     updateRecord(row.index, column.id, value);
-  }
+  };
 
   return (
-    <div onClick={() => editable ? setIsEditing(true) : null} style={{cursor: editable ? "pointer" : "default"}}>
+    <div
+      onClick={() => (editable ? setIsEditing(true) : null)}
+      style={{ cursor: editable ? "pointer" : "default" }}
+    >
       {isEditing ? (
         <input
           value={value}

@@ -1,10 +1,12 @@
 import React, { useMemo } from "react";
-import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
-import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import styles from "./Dashboard.module.css";
+import { Navigate } from "react-router-dom";
+import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
+import RecordForm from "../../components/RecordForm/RecordForm";
+import RecordTable from "../../components/RecordTable/RecordTable";
+import styles from "./Transactions.module.css";
 
-function Dashboard() {
+function Transactions() {
   const { user } = useUser();
   const records = useSelector((state) => state.records.records);
   const totalMonthly = useMemo(() => {
@@ -19,10 +21,8 @@ function Dashboard() {
     <>
       <SignedIn>
         <div className={styles.container}>
-          <h1 className={styles.header}>
-            Welcome {user?.firstName}! Here are your finances:{" "}
-          </h1>
-          <div>Total Monthly: ${totalMonthly}</div>
+          <RecordForm />
+          <RecordTable />
         </div>
       </SignedIn>
       <SignedOut>
@@ -32,4 +32,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Transactions;
