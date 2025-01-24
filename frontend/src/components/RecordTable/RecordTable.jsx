@@ -77,6 +77,7 @@ function RecordTable() {
           <EditableCell
             {...props}
             updateRecord={updateCellRecord}
+            isDate={true}
             editable={false}
           />
         ),
@@ -125,7 +126,7 @@ function RecordTable() {
             prepareRow(row);
             const { key, restRowProps } = row.getRowProps();
             return (
-              <tr key={key} {...restRowProps}>
+              <tr key={key} {...restRowProps} className={styles.tableBodyRow}>
                 {row.cells.map((cell) => {
                   const { key, restCellProps } = cell.getCellProps();
                   return (

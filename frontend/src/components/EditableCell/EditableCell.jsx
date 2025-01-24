@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getCurrentDate } from "../../utils/getCurrentDate";
 
 export default function EditableCell({
   value: initialValue,
@@ -6,9 +7,10 @@ export default function EditableCell({
   column,
   updateRecord,
   editable,
+  isDate
 }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useState(isDate ? getCurrentDate(initialValue) : initialValue);
 
   const onBlur = () => {
     setIsEditing(false);

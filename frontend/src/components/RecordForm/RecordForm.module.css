@@ -27,6 +27,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #3498db;
+  box-sizing: border-box;
 }
 
 .label {
@@ -36,5 +37,5 @@
 }
 
 .formField {
-    width: 100%;
+  position: relative;
 }

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { asyncAddRecords } from "../../slices/FinancialRecordSlice";
 import styles from "./RecordForm.module.css";
+import { getCurrentDate } from "../../utils/getCurrentDate";
 
 const DEFAULT_DATA = {
   description: "",
@@ -70,11 +71,15 @@ function RecordForm() {
             value={formData["category"]}
           >
             <option value="">Select a category</option>
-            <option value="Food">Food</option>
-            <option value="Rent">Rent</option>
-            <option value="Salary">Salary</option>
-            <option value="Utilities">Utilities</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Food & Drink">Food & Drink</option>
+            <option value="Clothing">Clothing</option>
             <option value="Entertainment">Entertainment</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Salary">Salary</option>
+            <option value="Savings">Savings</option>
+            <option value="Loan">Loan</option>
+            <option value="Bill">Bill</option>
             <option value="Others">Others</option>
           </select>
         </div>

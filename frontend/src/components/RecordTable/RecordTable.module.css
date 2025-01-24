@@ -27,11 +27,15 @@
   color: #333;
 }
 
-.tableBody tr:nth-child(odd) {
+.tableBodyRow:nth-child(even) {
+  background-color: #ffffff; /* Zebra striping for rows, light grey */
+}
+
+.tableBodyRow:nth-child(odd) {
   background-color: #f2f2f2; /* Zebra striping for rows, light grey */
 }
 
-.tableBody tr:hover {
+.tableBodyRow:hover {
   background-color: #e8f4f8; /* Light blue hover effect for rows */
 }
 
