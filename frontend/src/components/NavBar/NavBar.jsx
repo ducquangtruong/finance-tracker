@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <Link to="/" className={styles.link}>
         Finance App
       </Link>
@@ -18,7 +18,7 @@ function NavBar() {
       <SignedIn>
         <UserButton className={styles.userButton} />
       </SignedIn>
-    </div>
+    </nav>
   );
 }
 

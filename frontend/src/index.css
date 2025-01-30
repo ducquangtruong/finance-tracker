@@ -1,32 +1,39 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body,
-html {
+* {
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color-scheme: light dark;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+html {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+:root {
+  --primaryPurple: #646ff0;
+  --black-1: #646681;
+  --black-2: #585858;
+  --bg-1: #f8f8ff;
+  --bg-2: #ecedf6;
+  --bg-3: #cccdde;
+  --bg-4: #585858;
+  --gray-1: #eee;
+  --gray-2: #dedfe1;
+  --black: black;
+  --white: white;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-4);
   }
 }

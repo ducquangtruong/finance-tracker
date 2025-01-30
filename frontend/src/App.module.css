@@ -1,6 +1,7 @@
 .appContainer {
   width: 100vw;
   min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   /* justify-content: center; */
   flex-direction: column;

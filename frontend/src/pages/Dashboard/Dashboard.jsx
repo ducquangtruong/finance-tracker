@@ -18,12 +18,12 @@ function Dashboard() {
   return (
     <>
       <SignedIn>
-        <div className={styles.container}>
+        <main className={styles.container}>
           <h1 className={styles.header}>
             Welcome {user?.firstName}! Here are your finances:{" "}
           </h1>
           <div>Total Monthly: ${totalMonthly}</div>
-        </div>
+        </main>
       </SignedIn>
       <SignedOut>
         <Navigate to="/auth" />

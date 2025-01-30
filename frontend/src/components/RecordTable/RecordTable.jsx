@@ -7,6 +7,7 @@ import {
 } from "../../slices/FinancialRecordSlice";
 import EditableCell from "../EditableCell/EditableCell";
 import styles from "./RecordTable.module.css";
+import Button from "../Button/button";
 
 function RecordTable() {
   const dispatch = useDispatch();
@@ -86,9 +87,9 @@ function RecordTable() {
         Header: "Delete",
         id: "delete",
         Cell: ({ row }) => (
-          <button className={styles.deleteButton} onClick={() => deleteRow(row.index)}>
+          <Button variant="secondary" onClick={() => deleteRow(row.index)}>
             Delete
-          </button>
+          </Button>
         ),
       },
     ],
