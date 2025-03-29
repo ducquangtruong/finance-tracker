@@ -8,7 +8,7 @@ router.get("/getAllByUserID/:userId", async (req, res) => {
     const userId = req.params.userId;
     const records = await FinancialRecordModel.find({ userId: userId });
     if (records.length === 0) {
-      res.status(200).send([]);
+      res.status(200);
     }
     res.status(200).send(records);
   } catch (err) {
@@ -37,7 +37,7 @@ router.put("/:id", async (req, res) => {
       { new: true }
     );
     if (!record) {
-      res.status(200).send([]);
+      res.status(200);
     }
     res.status(200).send(record);
   } catch (err) {
@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res) => {
     const id = req.params.id;
     const record = await FinancialRecordModel.findByIdAndDelete(id);
     if (!record) {
-      res.status(200).send([]);
+      res.status(200);
     }
     res.status(200).send(record);
   } catch (err) {
