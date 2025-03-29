@@ -14,12 +14,14 @@ html {
 
 :root {
   --primaryPurple: #646ff0;
+  --primaryPurpleHover: #4d5bf7;
   --black-1: #646681;
   --black-2: #585858;
   --bg-1: #f8f8ff;
   --bg-2: #ecedf6;
   --bg-3: #cccdde;
   --bg-4: #585858;
+  --bg-5: #abacbb;
   --gray-1: #eee;
   --gray-2: #dedfe1;
   --black: black;

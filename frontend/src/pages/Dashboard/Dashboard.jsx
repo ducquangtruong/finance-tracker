@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Dashboard.module.css";
+import PieChart from "../../components/PieChart/PieChart";
 
 function Dashboard() {
   const { user } = useUser();
@@ -23,6 +24,7 @@ function Dashboard() {
             Welcome {user?.firstName}! Here are your finances:{" "}
           </h1>
           <div>Total Monthly: ${totalMonthly}</div>
+          <PieChart />
         </main>
       </SignedIn>
       <SignedOut>

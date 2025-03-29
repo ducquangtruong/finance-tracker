@@ -6,11 +6,10 @@ export default function EditableCell({
   row,
   column,
   updateRecord,
-  editable,
-  isDate
+  editable
 }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState(isDate ? getCurrentDate(initialValue) : initialValue);
+  const [value, setValue] = useState(initialValue);
 
   const onBlur = () => {
     setIsEditing(false);

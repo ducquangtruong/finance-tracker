@@ -27,31 +27,13 @@ export const financialRecordSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(asyncFetchRecords.pending, (state, action) => {
-        console.log("GET pending...");
-      })
       .addCase(asyncFetchRecords.fulfilled, (state, action) => {
-        console.log("GET success.");
         if (action.payload) state.records = action.payload;
       })
-      .addCase(asyncFetchRecords.rejected, (state, action) => {
-        console.log("GET failed.");
-      })
-      .addCase(asyncAddRecords.pending, (state, action) => {
-        console.log("POST pending...");
-      })
       .addCase(asyncAddRecords.fulfilled, (state, action) => {
-        console.log("POST success.");
         if(action.payload) state.records.push(action.payload);
       })
-      .addCase(asyncAddRecords.rejected, (state, action) => {
-        console.log("POST failed.");
-      })
-      .addCase(asyncUpdateRecords.pending, (state, action) => {
-        console.log("PUT pending...");
-      })
       .addCase(asyncUpdateRecords.fulfilled, (state, action) => {
-        console.log("PUT success.");
         if(action.payload) {
           state.records = state.records.map(record => {
             if (record._id === action.payload._id) {return action.payload};
@@ -59,21 +41,11 @@ export const financialRecordSlice = createSlice({
           })
         };
       })
-      .addCase(asyncUpdateRecords.rejected, (state, action) => {
-        console.log("PUT failed.");
-      })
-      .addCase(asyncDeleteRecords.pending, (state, action) => {
-        console.log("DELETE pending...");
-      })
       .addCase(asyncDeleteRecords.fulfilled, (state, action) => {
-        console.log("DELETE success.");
         state.records = state.records.filter(
           (record) => record._id !== action.payload._id
         );
       })
-      .addCase(asyncDeleteRecords.rejected, (state, action) => {
-        console.log("DELETE failed.");
-      });
   },
 });
 

@@ -5,6 +5,11 @@
   border-radius: 12px;
 }
 
+.buttonContainer {
+    box-sizing: border-box;
+    margin: 20px;
+}
+
 @media (prefers-color-scheme: dark) {
   .container {
     background-color: var(--bg-4);

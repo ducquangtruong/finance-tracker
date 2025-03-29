@@ -8,10 +8,10 @@ import {
 import EditableCell from "../EditableCell/EditableCell";
 import styles from "./RecordTable.module.css";
 import Button from "../Button/button";
+import { getCurrentDate } from "../../utils/getCurrentDate";
 
-function RecordTable() {
+function RecordTable({records}) {
   const dispatch = useDispatch();
-  const records = useSelector((state) => state.records.records);
 
   const updateCellRecord = (rowIndex, columnId, value) => {
     const id = records[rowIndex]._id;
@@ -21,7 +21,6 @@ function RecordTable() {
 
   const deleteRow = (rowIndex) => {
     const id = records[rowIndex]._id;
-    console.log(id);
     if (id) dispatch(asyncDeleteRecords(id));
   };
 
@@ -77,8 +76,8 @@ function RecordTable() {
         Cell: (props) => (
           <EditableCell
             {...props}
+            value={getCurrentDate(props.value)}
             updateRecord={updateCellRecord}
-            isDate={true}
             editable={false}
           />
         ),
