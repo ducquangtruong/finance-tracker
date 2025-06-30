@@ -1,0 +1,55 @@
+.tableContainer {
+  margin: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tableHeaderRow,
+.tableDataRow {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* Light grey border for cells */
+  text-align: left;
+}
+
+.tableHeaderRow {
+  background-color: #3498db; /* Darker blue header background */
+  color: white;
+  font-size: 16px;
+}
+
+.tableDataRow {
+  color: #333;
+}
+
+.tableBodyRow:nth-child(even) {
+  background-color: #ffffff; /* Zebra striping for rows, light grey */
+}
+
+.tableBodyRow:nth-child(odd) {
+  background-color: #f2f2f2; /* Zebra striping for rows, light grey */
+}
+
+.tableBodyRow:hover {
+  background-color: #e8f4f8; /* Light blue hover effect for rows */
+}
+
+.deleteButton {
+  background-color: #343cdb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+  background-color: #2b32bc;
+}

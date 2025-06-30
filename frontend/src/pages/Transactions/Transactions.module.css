@@ -1,0 +1,23 @@
+.container {
+  width: 90%;
+  background-color: var(--bg-2);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.buttonContainer {
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: var(--bg-4);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
